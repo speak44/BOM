@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="按钮" id="btn"/>
+		<input type="button" value="关闭" id="btn2"/>
+		<iframe src="" width="" height="" name="iframe"></iframe>
+		<script type="text/javascript">
+			/*
+			 	open(URL,name,style,boolean)
+			 * 参数：
+			 * 	  URL：跳转地址，不加http默认本地打开
+			 *   name:打开方式，框架name,默认是新窗口打开
+				 *     _blank:新窗口打开
+				 *     _self:自身窗口打开
+				 *    _top:最外层框架打开
+				 *    _parent:父级框架打开
+				 *    name:iframe的name
+				 *
+				 不常使用 
+				 style:新窗口的样式
+				 boolean:是否保留历史记录
+			 * */
+			var btn = document.getElementById('btn');
+			var btn2 = document.getElementById('btn2');
+			var opener = null;
+			btn.onclick = function(){
+				//open('http://www.baidu.com')//跳链接地址，并且弹出新窗口
+				//open('1-BOM.html')//弹新窗口，并且打开1-BOM的这个文档
+				//open('1-BOM.html','_blank')//弹出新窗口。并且打开了1-BOM的这个文档
+				//open('1-BOM.html','_self')//当前页打开
+				//open('http://www.baidu.com','iframe')//在name名字是iframe的元素中打开百度链接
+				//open('3-test.html','iframe')//在name名字是iframe的元素中打开3-test的这个文档
+				//open('http://www.baidu.com','_blank','width=100px,height=100px')//弹出新窗口，链接百度网址，弹出新窗口是宽为100，高为100的窗口
+				opener = open('1-BOM.html','_blank')
+			}
+			btn2.onclick = function(){
+				opener.close()
+			}
+			console.log(top)
+		</script>
+	</body>
+</html>
